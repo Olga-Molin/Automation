@@ -1,10 +1,10 @@
-from file_adress import Adress
-from file_postage import Mailing
+from adress import Adress
+from mailing import Mailing
 
 to_adress = Adress('188689', 'Воронеж', 'Звездная', '58', '48')
 from_adress = Adress('199125', 'Санкт-Петербург', 'Есенина', '5', '125')
-track = str('556677')
-cost = int(500)
+track = ('556677')
+cost = 500
 
 mailing = Mailing(to_adress, from_adress, track, cost)
 
