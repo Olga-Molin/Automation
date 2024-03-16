@@ -1,6 +1,6 @@
-var_1 = 37
+
+# Напишите код, который меняет значения переменных местами 
+var_1 = 33
 var_2 = 99
-var_1 = var_1 + var_2
-var_2 = var_1 - var_2
-var_1 = var_1 - var_2
+var_1, var_2 = var_2, var_1
 print(var_1, var_2)
