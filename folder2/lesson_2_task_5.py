@@ -9,6 +9,6 @@ def month_to_season(n):
        print("Autumn")
     else:
        print("Неверно указан номер месяца")
-       return n
+       
 n = int(input("Введите номер месяца: "))
 month_to_season(n)
