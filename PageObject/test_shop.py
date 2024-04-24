@@ -5,10 +5,10 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-from pagess.test_Three import LoginPage
-from pagess.test_Three import ShopPage
-from pagess.test_Three import CheckoutPage
-from pagess.test_Three import BasePage
+from pages.test_Three import LoginPage
+from pages.test_Three import ShopPage
+from pages.test_Three import CheckoutPage
+from pages.test_Three import BasePage
 
 def test_shop():
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
