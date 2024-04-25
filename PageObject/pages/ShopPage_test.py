@@ -42,13 +42,4 @@ class CheckoutPage(BasePage):
         self.driver.find_element(By.CSS_SELECTOR, value='#first-name').send_keys(first_name)
         self.driver.find_element(By.CSS_SELECTOR, value='#last-name').send_keys(last_name)
         self.driver.find_element(By.CSS_SELECTOR, value='#postal-code').send_keys(postal_code)
-        self.driver.find_element(By.CSS_SELECTOR, value='#continue').click()        
-
-   
-   
-   
-   
-   
-   
-   
-   
+        self.driver.find_element(By.CSS_SELECTOR, value='#continue').click()

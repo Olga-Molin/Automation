@@ -30,5 +30,4 @@ class CalculatorPage:
                 (By.CSS_SELECTOR, ".screen"), text_= expected_result)
             )
         assert self.driver.find_element(
-            By.CSS_SELECTOR, value=".screen").text == expected_result
-        
+            By.CSS_SELECTOR, value=".screen").text == expected_result    

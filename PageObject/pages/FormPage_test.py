@@ -27,5 +27,3 @@ class FormPage:
     def check_form_field_color(self, field_id):
         field_color = self.driver.find_element(By.CSS_SELECTOR, value=f"#{field_id}").value_of_css_property("background-color")
         return field_color
-    
-    
