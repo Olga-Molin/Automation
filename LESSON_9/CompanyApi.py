@@ -1,7 +1,7 @@
 import requests
 import pytest
-
-class Company:
+#класс по работе с api
+class CompanyApi:
 
     def __init__(self, url):
         self.url = url
@@ -24,7 +24,7 @@ class Company:
         resp = requests.post(f"{self.url}/company", json=company, headers=my_headers)
         return resp.json()
 
-    def get_list_employee(self, id):
+    def get_company_list(self, id):
         my_params = {
             "company": id
         }
