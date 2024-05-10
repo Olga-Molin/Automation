@@ -35,16 +35,16 @@ class CompanyApi:
         resp = requests.get(f"{self.url}/employee/{id_employee}")
         return resp.json()
 
-    def add_new_employee(self, new_id, name, last_name):
+    def add_new_employee(self, new_id, first_name, last_name, phone):
         employee = {
             "id": 1,
-            "firstName": name,
+            "firstName": first_name,
             "lastName": last_name,
             "middleName": "-",
             "companyId": new_id,
             "email": "test@test.ru",
             "url": "string",
-            "phone": "89999999999",
+            "phone": phone,
             "birthdate": "2023-12-25T18:54:13.783Z",
             "isActive": 'true'
         }
