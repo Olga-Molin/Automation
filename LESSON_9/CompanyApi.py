@@ -24,18 +24,22 @@ class CompanyApi:
         resp = requests.post(f"{self.url}/company", json=company, headers=my_headers)
         return resp.json()
 
-    def get_company_list(self, id):
-        my_params = {
-            "company": id
-        }
-        resp = requests.get(f"{self.url}/employee", params=my_params)
-        return resp.json()
+    #def get_company_list(self, id):
+        #my_params = {
+            #"company": id
+        #}
+        #resp = requests.get(f"{self.url}/employee", params=my_params)
+        #return resp.json()
 
-    def get_employee_by_id(self, id_employee):
+    def get_company_list(self, params_to_add=None):
+        resp = requests.get(self.url + '/company', params=params_to_add)
+        return resp.json()
+    
+    def get_employee_by_id(self, id_employee: int):
         resp = requests.get(f"{self.url}/employee/{id_employee}")
         return resp.json()
 
-    def add_new_employee(self, new_id, first_name, last_name, phone):
+    def add_new_employee(self, new_id: int, first_name: str, last_name: str, phone: int):
         employee = {
             "id": 1,
             "firstName": first_name,
@@ -54,7 +58,7 @@ class CompanyApi:
         resp = requests.post(f"{self.url}/employee", headers=my_headers, json=employee)
         return resp.json()
 
-    def update_employee_info(self, id_employee, last_name, email):
+    def update_employee_info(self, id_employee: int, last_name: str, email: str):
         user_info = {
             "lastName": last_name,
             "email": email,
