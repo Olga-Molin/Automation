@@ -51,18 +51,18 @@ def test_add_new_employee():
 #Изменение информации 
 def test_edit():
     description = "dz9"
+    phone = "+79020255654"
+    new_email = "o@mail.ru"
     db.create(name, description)
     new_id = db.get_max_id_company()
-    phone = "+79020255654"
     db.create_employee(new_id, first_name, last_name, phone)
     employee_id = db.get_max_id_emp()
     new_name = "Last test"
-    description = "holidays"
-    edited = api.update_employee_info(new_id, new_name, description)
+    api.update_employee_info(employee_id, new_name, new_email)
+    edited_employee = api.get_employee_by_id(employee_id)
     db.delete_employee(employee_id)
     db.delete_company(new_id)
 
-    #assert edited.get("description") == "holidays"
-    #assert edited.get("employee_id") == employee_id
-    #assert edited.get("phone") == "+79020255654"
-    #assert edited.get("new_name") == "Last test"
+    assert edited_employee.get("firstName") == first_name
+    assert edited_employee.get("lastName") == new_name
+    assert edited_employee.get("email") == new_email
